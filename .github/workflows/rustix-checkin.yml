@@ -1,17 +1,9 @@
 name: rustix-auto-alive
 
 on:
-  # 定时触发（已停用，改由 Uptime Kuma 触发）
-  # schedule:
-     - cron: '0 */6 * * *'
-  # 支持手动触发
-  workflow_dispatch:
-  # 由 Uptime Kuma Webhook 触发（服务器离线时）
-  # 没有 uptime 可删除下面两行，并将定时触发重新启用
-# 同一时间只允许一个实例运行
-concurrency:
-  group: rustix-auto
-  cancel-in-progress: false
+  workflow_dispatch:  # 👈 纯粹的定点打击接口，允许网页手动点击，也允许老版 CF 精准点名
+  schedule:
+    - cron: '22 */3 * * *'   # 每 3 小时执行一次 (UTC)
 
 jobs:
   rustix-alive:
