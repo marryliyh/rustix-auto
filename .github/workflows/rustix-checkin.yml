@@ -3,7 +3,7 @@ name: rustix-auto-alive
 on:
   # 每 6 小时运行一次（UTC）
   schedule:
-    - cron: '0 */5 * * *'
+    - cron: '0 */4 * * *'
 
   # 支持手动触发
   workflow_dispatch:
